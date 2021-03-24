@@ -10,7 +10,7 @@ const urlSchema = new mongoose.Schema({
     short : {
         type : String,
         required : true,
-        default : shortid.generate()
+        default : shortid.generate
     },
     clicks : {
         type : Number,
