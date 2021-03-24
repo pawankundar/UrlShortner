@@ -7,7 +7,7 @@ const app = express()
 
 
 
-mongoose.connect('mongodb://localhost/shorturl',{
+mongoose.connect(process.env.MONGO_DB ||'mongodb://mongo/linkShortner',{
     useUnifiedTopology: true,
     useNewUrlParser: true
 })
@@ -43,3 +43,5 @@ app.get('/:shortUrl',async(req,res)=>{
 app.listen(process.env.PORT||3000,()=>{
     console.log(`server running `)
 })
+
+
